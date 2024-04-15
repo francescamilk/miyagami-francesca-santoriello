@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@miyagami-francesca-santoriello/ui-components": ["libs/ui-components/src/index.ts"],
+            "@miyagami-francesca-santoriello/ui-components/*": ["libs/ui-components/src/*"]
+        }
+    }
+}
