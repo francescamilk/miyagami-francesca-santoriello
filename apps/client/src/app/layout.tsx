@@ -1,3 +1,4 @@
+import { poppins } from '../app/ui/fonts';
 import './global.css';
 
 export const metadata = {
@@ -12,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${poppins.className} antialiased`}>{children}</body>
     </html>
   );
 }
