@@ -1,5 +1,6 @@
 import { poppins } from '../app/ui/fonts';
 import './global.css';
+import { ThemeProvider } from '@miyagami-francesca-santoriello/ui-components';
 
 export const metadata = {
   title: 'Welcome to client',
@@ -13,7 +14,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>{children}</body>
+      <body className={`${poppins.className} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

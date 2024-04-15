@@ -2,6 +2,7 @@
 const { fontFamily } = require('tailwindcss/defaultTheme');
 const { createGlobPatternsForDependencies } = require('@nx/react/tailwind');
 const { join } = require('path');
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   darkMode: ['class'],
@@ -22,6 +23,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        ...colors,
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
