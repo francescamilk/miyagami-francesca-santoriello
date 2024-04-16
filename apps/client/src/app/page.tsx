@@ -33,11 +33,11 @@ export default function Index() {
   }, [searchParams]);
 
   return (
-    <main className='bg-slate-50 dark:bg-black h-screen w-full'>
+    <main className='h-screen w-full'>
       <div className='container'>
         <header className='flex items-center justify-between pt-10'>
           <div>
-            <h1 className='text-4xl font-bold tracking-tighter text-black dark:text-slate-50 mr-4'>The Miyagami Flickr Finder</h1>
+            <h1 className='text-4xl font-bold tracking-tighter mr-4'>The Miyagami Flickr Finder</h1>
             {/* <Image src='/flickr.png' alt='Flickr logo' width='50' height='50' /> */}
           </div>
           <ModeToggle />

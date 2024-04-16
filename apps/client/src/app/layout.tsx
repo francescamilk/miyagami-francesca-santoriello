@@ -21,7 +21,17 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div style={{
+            backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1021%26quot%3b)' fill='none'%3e%3cpath d='M 0%2c450 C 57.6%2c391.4 172.8%2c171.2 288%2c157 C 403.2%2c142.8 460.8%2c380 576%2c379 C 691.2%2c378 748.8%2c141.8 864%2c152 C 979.2%2c162.2 1036.8%2c405.4 1152%2c430 C 1267.2%2c454.6 1382.4%2c306 1440%2c275L1440 560L0 560z' fill='rgba(225%2c 68%2c 125%2c 0.14)'%3e%3c/path%3e%3cpath d='M 0%2c117 C 72%2c187.6 216%2c475 360%2c470 C 504%2c465 576%2c111.8 720%2c92 C 864%2c72.2 936%2c365.8 1080%2c371 C 1224%2c376.2 1368%2c168.6 1440%2c118L1440 560L0 560z' fill='rgba(0%2c 95%2c 212%2c 0.21)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1021'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e")`,
+            backgroundSize: 'cover',
+            width: '100vw',
+            height: '100vh',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+          }}>
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

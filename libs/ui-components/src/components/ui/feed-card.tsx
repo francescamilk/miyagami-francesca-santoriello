@@ -23,8 +23,8 @@ const FeedCard = ({ title, author, media, link }: Photo) => {
     <div>
         <Card className='cursor-default'>
           <CardHeader>
-            <CardTitle className='h-12'>
-              {title}
+            <CardTitle className='h-12 tracking-wider'>
+              {title.substring(0, 50).toUpperCase()}
             </CardTitle>
             <CardContent 
               style={{backgroundImage: `url(${media})`}}
