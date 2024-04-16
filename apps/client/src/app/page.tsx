@@ -34,7 +34,7 @@ export default function Index() {
 
   return (
     <main className='h-screen w-full'>
-      <div className='container'>
+      <div className='container px-24'>
         <header className='flex items-center justify-between pt-10'>
           <div>
             <h1 className='text-4xl font-bold tracking-tighter mr-4'>The Miyagami Flickr Finder</h1>
@@ -46,7 +46,7 @@ export default function Index() {
           placeholder={searchParams ? searchParams : 'Search multiple tags separating by comma...'}
           buttonText={searchParams ? 'Reset' : 'Search'}
         />
-        <section id='feed' className='h-[78vh] w-full mt-8 overflow-x-hidden overflow-y-scroll'>
+        <section id='feed' className='h-[76vh] w-full mt-8 overflow-x-hidden overflow-y-scroll'>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {photos.map((photo) => (
               <FeedCard 

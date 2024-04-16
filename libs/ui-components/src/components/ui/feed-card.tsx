@@ -23,16 +23,14 @@ const FeedCard = ({ title, author, media, link }: Photo) => {
     <div>
         <Card className='cursor-default'>
           <CardHeader>
-            <CardTitle className='h-12 tracking-wider'>
+            <CardTitle>
               {title.substring(0, 50).toUpperCase()}
             </CardTitle>
             <CardContent 
-              style={{backgroundImage: `url(${media})`}}
-              className='bg-cover bg-center bg-no-repeat w-full h-48 rounded-md'
-            >
-            </CardContent>
+              style={{backgroundImage: `url(${media})`}} 
+            />
           </CardHeader>
-          <CardFooter className='flex justify-between'>
+          <CardFooter>
             <p>
               <i>{author.substring(0, 28)}</i>
             </p>
