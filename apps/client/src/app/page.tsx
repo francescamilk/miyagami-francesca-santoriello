@@ -3,18 +3,11 @@
 // import Image from 'next/image'
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { Send } from 'lucide-react';
 
 import { 
   ModeToggle,
   InputWithButton,
-} from '@miyagami-francesca-santoriello/ui-components';
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+  FeedCard
 } from '@miyagami-francesca-santoriello/ui-components';
 
 import type { Photo } from '@shared/types';
@@ -25,8 +18,9 @@ export default function Index() {
 
   const fetchPhotos = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/api/v1/photos?tags=${searchParams}`);
-      // console.log(searchParams)
+      const query = typeof searchParams === 'string' ? `?tags=${searchParams}` : '';
+      const response = await fetch(`http://localhost:3000/api/v1/photos${query}`);
+
       const photosData: Photo[] = await response.json();
       setPhotos(photosData);
     } catch (error) {
@@ -48,27 +42,18 @@ export default function Index() {
           </div>
           <ModeToggle />
         </header>
-        <InputWithButton></InputWithButton>
+        <InputWithButton 
+          placeholder={searchParams ? searchParams : 'Search multiple tags separating by comma...'}
+        />
         <section id='feed' className='h-[78vh] w-full mt-8 overflow-x-hidden overflow-y-scroll'>
           <div className="grid grid-cols-3 gap-4">
-            {/* REF: in a FeedCard w props */}
             {photos.map((photo) => (
-              <Card key={photo.id} className='cursor-default'>
-                <CardHeader>
-                  <CardTitle className='h-12'>
-                    {photo.title}
-                  </CardTitle>
-                  <CardContent 
-                    style={{backgroundImage: `url(${photo.media})`}}
-                    className='bg-cover bg-center bg-no-repeat w-full h-48 rounded-md'
-                  >
-                  </CardContent>
-                </CardHeader>
-                <CardFooter className='flex justify-between'>
-                  <p><i>{photo.author}</i></p>
-                  <Send className='h-[1.2rem] w-[1.2rem] cursor-pointer' />
-                </CardFooter>
-              </Card>
+              <FeedCard 
+                key={photo.id}
+                title={photo.title}
+                author={photo.author}
+                media={photo.media}
+              />
             ))}
           </div>
         </section>

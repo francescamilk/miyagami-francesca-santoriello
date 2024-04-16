@@ -1,7 +1,7 @@
 export interface Photo {
     id?:string;
     title: string;
-    link: string;
+    link?: string;
     media: {m:string};
     author: string;
     author_id?: string;
