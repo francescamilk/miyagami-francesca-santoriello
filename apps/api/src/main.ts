@@ -17,10 +17,11 @@ app.get('/api/v1/photos', (_req, res) => {
         const parsedRes: FlickrResponse = JSON.parse(sanitisedRes);
 
         const cleanedRes = parsedRes.items.map(({ title, link, media, author, date_taken }) => ({
-           title:title.trim() || date_taken,
-           link:link,
-           media:media["m"],
-           author:author.match(/"([^"\\]+)\\?"/)?.[1] || author
+            id: Date.now(),
+            title:title.trim() || date_taken,
+            link:link,
+            media:media["m"],
+            author:author.match(/"([^"\\]+)\\?"/)?.[1] || author
         }));
 
         res.send(cleanedRes);
