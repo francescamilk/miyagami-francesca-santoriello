@@ -33,7 +33,9 @@ const FeedCard = ({ title, author, media, link }: Photo) => {
             </CardContent>
           </CardHeader>
           <CardFooter className='flex justify-between'>
-            <p><i>{author}</i></p>
+            <p>
+              <i>{author.substring(0, 28)}</i>
+            </p>
             <Send 
               className='h-[1.2rem] w-[1.2rem] cursor-pointer'
               onClick={handleSharing}

@@ -3,7 +3,9 @@
 import { Button } from "./button";
 import { Input } from "./input";
 
-export function InputWithButton({ placeholder }: { placeholder: string }) {
+export function InputWithButton(
+  { placeholder, buttonText }: { placeholder: string, buttonText: string }
+) {
   return (
     <form className="flex w-full max-w-2xl mt-4 items-center space-x-2">
       <Input 
@@ -13,7 +15,7 @@ export function InputWithButton({ placeholder }: { placeholder: string }) {
         placeholder={placeholder}
         className="rounded-lg shadow-lg grow py-2 pl-4" 
       />
-      <Button type="submit">Search</Button>
+      <Button type="submit">{buttonText}</Button>
     </form>
   );
 }

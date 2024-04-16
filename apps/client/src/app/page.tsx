@@ -42,11 +42,12 @@ export default function Index() {
           </div>
           <ModeToggle />
         </header>
-        <InputWithButton 
+        <InputWithButton
           placeholder={searchParams ? searchParams : 'Search multiple tags separating by comma...'}
+          buttonText={searchParams ? 'Reset' : 'Search'}
         />
         <section id='feed' className='h-[78vh] w-full mt-8 overflow-x-hidden overflow-y-scroll'>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {photos.map((photo) => (
               <FeedCard 
                 key={photo.id}
