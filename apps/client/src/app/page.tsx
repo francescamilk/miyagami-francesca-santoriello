@@ -19,7 +19,7 @@ export default function Index() {
   const fetchPhotos = async () => {
     try {
       const query = typeof searchParams === 'string' ? `?tags=${searchParams}` : '';
-      const response = await fetch(`http://localhost:3000/api/v1/photos${query}`);
+      const response = await fetch(`https://miyagami-fs-api.vercel.app/api/v1/photos${query}`);
 
       const photosData: Photo[] = await response.json();
       setPhotos(photosData);
