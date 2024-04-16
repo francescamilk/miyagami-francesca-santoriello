@@ -11,7 +11,14 @@ import {
 
 import type { Photo } from '@shared/types';
 
-const FeedCard = ({ title, author, media }: Photo) => {
+const FeedCard = ({ title, author, media, link }: Photo) => {
+  const handleSharing = () => {
+    const encodedLink = encodeURIComponent(link);
+    const message = `Check out this photo: ${encodedLink}`;
+
+    window.open(`https://api.whatsapp.com/send?text=${message}`);
+  }
+
   return (
     <div>
         <Card className='cursor-default'>
@@ -27,7 +34,10 @@ const FeedCard = ({ title, author, media }: Photo) => {
           </CardHeader>
           <CardFooter className='flex justify-between'>
             <p><i>{author}</i></p>
-            <Send className='h-[1.2rem] w-[1.2rem] cursor-pointer' />
+            <Send 
+              className='h-[1.2rem] w-[1.2rem] cursor-pointer'
+              onClick={handleSharing}
+            />
           </CardFooter>
         </Card>
     </div>

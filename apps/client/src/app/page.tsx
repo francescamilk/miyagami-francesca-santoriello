@@ -53,6 +53,7 @@ export default function Index() {
                 title={photo.title}
                 author={photo.author}
                 media={photo.media}
+                link={photo.link}
               />
             ))}
           </div>
