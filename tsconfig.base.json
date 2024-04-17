@@ -18,7 +18,8 @@
       "@miyagami-francesca-santoriello/ui-components": [
         "libs/ui-components/src/index.ts"
       ],
-      "@shared/types": ["libs/shared/types.ts"]
+      "@shared/types": ["libs/shared/types.ts"],
+      "@miyagami-francesca-santoriello/ui-components/utils": ["libs/ui-components/src/utils.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,11 +1,10 @@
 import * as React from "react"
 
-// FIX
-// import { cn } from "@miyagami-francesca-santoriello/ui-components/utils"
+// defined alias in tsconfig.base.json to match shadcn default gives lint error
+// using relative import to comply
 import { cn } from "../../utils"
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement>
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {

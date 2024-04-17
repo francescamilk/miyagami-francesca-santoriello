@@ -10,14 +10,18 @@ import {
   FeedCard
 } from '@miyagami-francesca-santoriello/ui-components';
 
+// libs/shared/types.ts
 import type { Photo } from '@shared/types';
 
 export default function Index() {
+  // access search params from url
   const searchParams = useSearchParams().get('tags');
+  // state hook to manage fetched photos
   const [photos, setPhotos] = useState<Photo[]>([]);
 
   const fetchPhotos = async () => {
     try {
+      // if there is a query, use it to construct req url
       const query = typeof searchParams === 'string' ? `?tags=${searchParams}` : '';
       const response = await fetch(`https://miyagami-fs-api.vercel.app/api/v1/photos${query}`);
 
@@ -28,6 +32,7 @@ export default function Index() {
     }
   }
 
+  // effect hook to trigger fetching when search params change
   useEffect(() => {
     fetchPhotos();
   }, [searchParams]);
@@ -43,6 +48,7 @@ export default function Index() {
           <ModeToggle />
         </header>
         <InputWithButton
+          // send appropriate props depending on search params state
           placeholder={searchParams ? searchParams : 'Search multiple tags separating by comma...'}
           buttonText={searchParams ? 'Reset' : 'Search'}
         />

@@ -1,5 +1,7 @@
 import * as React from "react"
 
+// defined alias in tsconfig.base.json to match shadcn default gives lint error
+// using relative import to comply
 import { cn } from "../../utils"
 
 const Card = React.forwardRef<
@@ -9,7 +11,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-xl border bg-card text-card-foreground shadow",
+      "rounded-xl cursor-default border bg-card text-card-foreground shadow",
       className
     )}
     {...props}

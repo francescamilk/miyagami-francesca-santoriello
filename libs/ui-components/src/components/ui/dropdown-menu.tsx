@@ -6,6 +6,8 @@ import {
   DotFilledIcon,
 } from "@radix-ui/react-icons"
 
+// defined alias in tsconfig.base.json to match shadcn default gives lint error
+// using relative import to comply
 import { cn } from "../../utils"
 
 const DropdownMenu = DropdownMenuPrimitive.Root

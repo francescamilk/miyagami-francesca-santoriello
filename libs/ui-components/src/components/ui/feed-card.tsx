@@ -9,9 +9,11 @@ import {
     CardTitle,
 } from './card';
 
+// lib/shared/types.ts
 import type { Photo } from '@shared/types';
 
 const FeedCard = ({ title, author, media, link }: Photo) => {
+  // share flickr link of individual photo on whatsapp
   const handleSharing = () => {
     const encodedLink = encodeURIComponent(link);
     const message = `Check out this photo: ${encodedLink}`;
@@ -21,7 +23,7 @@ const FeedCard = ({ title, author, media, link }: Photo) => {
 
   return (
     <div>
-        <Card className='cursor-default'>
+        <Card>
           <CardHeader>
             <CardTitle>
               {title.substring(0, 50).toUpperCase()}
